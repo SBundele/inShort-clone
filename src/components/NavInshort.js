@@ -4,6 +4,7 @@ import inShortLogo from '../assets/images/logo_inshorts.png'
 import '../assets/css/navInShort.css'
 
 function NavInshort() {
+
   return (
     <nav className='navbar'>
       <div className='nav-icon'>
