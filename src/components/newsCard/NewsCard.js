@@ -9,11 +9,12 @@ function NewsCard({ newsItem }) {
         src={newsItem.urlToImage ? newsItem.urlToImage : placeholder}
         alt={newsItem.title}
       />
-      
+
       <div className="news-content">
         <div>
           <span className="title">{newsItem.title}</span>
           <span className="author">
+            {/* eslint-disable-next-line */}
             <a href={newsItem.url} target="_blank">
               <strong>short </strong>
             </a>
