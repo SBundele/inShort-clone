@@ -21,7 +21,7 @@ function App() {
       // eslint-disable-next-line
       const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       const news = await fetch(
-        `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${apiKey}`
+        `${proxyUrl}https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${apiKey}`
       );
       const actualData = await news.json();
       console.log(actualData);
