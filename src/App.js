@@ -25,8 +25,8 @@ function App() {
       );
       const actualData = await news.json();
       console.log(actualData);
-      setNewsArray(actualData.articles);
-      setNewsResults(actualData.totalResults);
+      setNewsArray(actualData?.articles);
+      setNewsResults(actualData?.totalResults);
     } catch (error) {
       console.log(error);
     }

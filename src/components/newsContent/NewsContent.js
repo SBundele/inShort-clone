@@ -21,7 +21,7 @@ function NewsContent() {
           <img src={playStore} alt="play-store" height="80%" />
         </div>
 
-        {newsArray.map((newsItem) => (
+        {newsArray && newsArray.map((newsItem) => (
           <NewsCard newsItem={newsItem} key={newsItem.title} />
         ))}
 
