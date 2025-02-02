@@ -11,12 +11,14 @@ export const CategoryContext = createContext();
 function App() {
   const [category, setCategory] = useState("general");
   const [newsArray, setNewsArray] = useState([]);
+  const [loadMore, setLoadMore] = useState(20);
   const [newsResults, setNewsResults] = useState(0);
 
   const apiKey = process.env.REACT_APP_API_KEY;
 
   const newsApi = async () => {
     try {
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       const news = await fetch(
         `https://newsapi.org/v2/top-headlines?category=${category}&apiKey=${apiKey}`
       );
@@ -31,11 +33,12 @@ function App() {
   
   useEffect(() => {
     newsApi();
-  }, [category, newsResults]);
+    // eslint-disable-next-line
+  }, [category, newsResults, loadMore]);
 
   return (
     <div className="App">
-      <CategoryContext.Provider value={{ category, setCategory, newsArray, newsResults }}>
+      <CategoryContext.Provider value={{ category, setCategory, newsArray, newsResults, loadMore, setLoadMore }}>
         <NavInshort />
         <NewsContent />
         <Footer />
